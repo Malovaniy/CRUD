@@ -1,0 +1,49 @@
+<button class="btn btnback" [routerLink]="[ '' ]">◁</button>
+
+<div class="phanel mt-5">
+     <div class="box">
+          <div class="fio">
+               <form [formGroup]="ownerForm">
+                    <p>ПІБ</p>
+                    <input class="my-2 myinp" formControlName="name"
+                         [ngClass]="{'bordRed':submitted2 && ff.name.errors}" type="text" placeholder="Імя">
+                    <input class="my-2 myinp" formControlName="lname"
+                         [ngClass]="{'bordRed':submitted2 && ff.lname.errors}" type="text" placeholder="Прізвище">
+                    <input class="my-2 myinp" formControlName="sname"
+                         [ngClass]="{'bordRed':submitted2 && ff.sname.errors}" type="text" placeholder="По-батькові">
+               </form>
+          </div>
+          <div class="car">
+               <form [formGroup]="carsForm">
+                    <p>Авто</p>
+                    <input class="my-2 myinp" formControlName="number"
+                         [ngClass]="{'bordRed':submitted && f.number.errors}" type="text" placeholder="Номери (Формат AМ2223AB)(Кирилиця)">
+                    <div class="myrow">
+                         <input class="my-2 myinp" formControlName="brand"
+                              [ngClass]="{'bordRed':submitted && f.brand.errors}" type="text" placeholder="Марка">
+                         <input class="my-2 ml-2 myinp" formControlName="model"
+                              [ngClass]="{'bordRed':submitted && f.model.errors}" type="text" placeholder="Модель">
+                    </div>
+                    <input class="my-2 myinp" type="number" [ngClass]="{'bordRed':submitted && f.year.errors}"
+                         formControlName="year" min="1886" max="2022" placeholder="Рік">
+                    <button class="btn mt-3 btnback" type="button" (click)="addCar()">add car</button>
+               </form>
+
+          </div>
+     </div>
+
+</div>
+<div class="phanel">
+     <div class="carSaved mb-4" *ngIf="carsArray.length> 0">
+          <h5>Добавлені автомобілі</h5>
+          <ol class="mx-3">
+               <li *ngFor="let item of carsArray, let i = index">
+                    {{item?.brand}} {{item?.model}} {{item?.year}} {{item?.number}}
+                    <button class="btn" (click)="deleteCar(i)">╳</button>
+               </li>
+
+          </ol>
+          <button class=" btn savebtn btnback" (click)="saveOwner()"> Зберегти</button>
+     </div>
+
+</div>

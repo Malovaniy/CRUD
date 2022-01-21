@@ -1,0 +1,53 @@
+
+.btnback{
+     border: 1px solid #000;
+     background-color: rgb(236, 236, 236);
+}
+.phanel{
+     display: flex;
+     justify-content: center;
+     border: 1px;
+}
+.box{
+     display: flex;
+     justify-content: space-between;
+     width: 80%;
+     border: #000 1px solid;
+     padding: 2%;
+     border-radius: 20px;
+}
+.fio, .car{
+     display: flex;
+     flex-direction: column;
+     width: 47%;
+}
+.myinp{
+     border-top: none;
+     border-left: none;
+     border-right: none;
+     outline: none;
+     width: 100%;
+}
+.carSaved{
+     width: 40%;
+     padding: 1%;
+     padding-left: 1.5%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     min-height: 230px;
+     border-left: solid 1px #000;
+     border-right: solid 1px #000;
+     border-bottom: solid 1px #000;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+}
+.ml-2{
+     margin-left: 2%;
+}
+.bordRed{
+     border-bottom: red 2px solid;
+}
+.savebtn{
+     width: 50%;
+}
